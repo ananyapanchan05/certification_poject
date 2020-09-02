@@ -8,22 +8,16 @@ pipeline {
             }
         }
 		stage('build docker image'){
-			steps{
-			 sh '''#!/bin/bash
-			  echo 'inside bash'
-			  echo 'building docker image'
+			steps{ 
 			  cd C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins.jenkins/workspace/phpbasic
-			  sudo -n docker build -t phpbasic:v1 .
-			 '''
+			  docker build -t phpbasic:v1 .
+			
 			}
 		}
-		stage('Run dokcer image'){
+		stage('Run docker image'){
 			steps{
-			sh '''#!/bin/bash
-			echo 'running docker image'
-		    sudo docker run -d -p 9090:80 phpbasic:v1
-			echo 'application deployed' 
-			'''
+		    docker run -d -p 9090:80 phpbasic:v1
+
 			}
 		}
     }
