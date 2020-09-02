@@ -12,7 +12,7 @@ pipeline {
 			 sh '''#!/bin/bash
 			  echo 'inside bash'
 			  echo 'building docker image'
-			  cd C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins.jenkins/workspace/php_project
+			  cd C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins.jenkins/workspace/phpbasic
 			  sudo -n docker build -t phpbasic:v1 .
 			 '''
 			}
