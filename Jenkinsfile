@@ -18,7 +18,9 @@ pipeline {
 		}
 		stage('Run docker image'){
 			steps{
-		    bat docker run -d -p 9090:80 phpbasic:v1
+			bat """
+		     docker run -d -p 9090:80 phpbasic:v1
+		      """
 
 			}
 		}
